@@ -30,10 +30,15 @@ class Queue {
   }
 
   dequeue() {
-    const data = this.queue.removeHead()
-    this.size--
-    console.log(`Removed ${data}! Queue size is now ${this.size}.`)
-    return data
+    if (!this.isEmpty()) {
+      const data = this.queue.removeHead()
+      this.size--
+      console.log(`Removed ${data}! Queue size is now ${this.size}.`)
+      return data
+    } else {
+      throw new Error('Queue is Empty!')
+    }
+
   }
 
 }
