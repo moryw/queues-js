@@ -15,8 +15,8 @@ const load = flights => {
 };
 
 const clear = runway => {
-  while(false) {
-
+  while(!runway.isEmpty()) {
+    const cleared = runway.dequeue()
     console.log('\nFlights wait...\n');
     console.log(`${cleared}, is cleared for takeoff!\n${cleared} in air.`);
   }
