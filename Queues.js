@@ -24,12 +24,12 @@ class Queue {
   }
 
   enqueue(data) {
-    if (this.hasRoom) {
+    if (this.hasRoom()) {
       this.queue.addToTail(data)
       this.size++
       console.log(`Added ${data}! Queue size is now ${this.size}.`)
     } else {
-      throw ne Error('Queue is Full')
+      throw new Error('Queue is Full')
     }
 
   }
