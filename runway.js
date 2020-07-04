@@ -2,7 +2,15 @@ const Queue = require('./Queue');
 
 const load = flights => {
   const runway = new Queue(3)
-  flights.forEach(flight => {});
+  flights.forEach(flight => {
+    try {
+      runway.enqueue(flight)
+      console.log(`${flight} taxi to runway.`);
+    } catch(err) {
+      console.error(err)
+      console.log('Runway full!');
+    }
+  })
   return runway;
 };
 
